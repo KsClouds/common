@@ -6,6 +6,6 @@ import (
 )
 
 func TestWeather(t *testing.T) {
-	rsp := getWeather("成都")
+	rsp := getWeather("南京")
 	fmt.Println(rsp)
 }
