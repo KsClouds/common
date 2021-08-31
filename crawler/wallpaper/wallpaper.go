@@ -1,7 +1,6 @@
 package wallpaper
 
 import (
-	"fmt"
 	"strings"
 
 	"github.com/gocolly/colly"
@@ -14,8 +13,7 @@ func GetList() (rsp []string) {
 
 	c.OnHTML("img", func(h *colly.HTMLElement) {
 		src := h.Attr("src")
-		fmt.Println(src)
-		if strings.EqualFold(src[:8], "/uploads") {
+		if len(src) > 8 && strings.EqualFold(src[:8], "/uploads") {
 			rsp = append(rsp, src)
 		}
 	})
