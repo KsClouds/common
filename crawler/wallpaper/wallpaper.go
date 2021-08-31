@@ -1,13 +1,15 @@
 package wallpaper
 
 import (
+	"math/rand"
+	"strconv"
 	"strings"
 
 	"github.com/gocolly/colly"
 )
 
 func GetList() (rsp []string) {
-	url := "https://pic.netbian.com/"
+	url := "https://pic.netbian.com/index_" + strconv.Itoa(rand.Intn(1275)+1) + ".html"
 
 	c := colly.NewCollector()
 
